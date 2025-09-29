@@ -234,9 +234,9 @@ int main()
         case 1:
             insert_beg();
             break;
-        // case 2:
-        //     insert_end();
-        //     break;
+        case 2:
+            insert_end();
+            break;
         // case 3:
         //     insert_after();
         //     break;
