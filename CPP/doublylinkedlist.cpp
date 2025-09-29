@@ -128,35 +128,36 @@ void del_beg()
 
 }
 
-// void del_end()
-// {
-//     struct node *ptr,*temp;
-//     if(start==NULL)
-//     {
-//         cout << "List is empty";
-//     }
-//     else
-//     {
-//         if(start->next==NULL)
-//         {
-//             ptr=start;
-//             start = NULL;
-//             cout << "element deleted at end" << ptr ->data;
-//             free(ptr);
-//         }
-//         else
-//         {   ptr=start;
-//             while(ptr->next != NULL)
-//             {
-//                 temp=ptr;
-//                 ptr = ptr -> next;
-//             }
-//             temp->next =NULL;
-//             cout << "element deleted at the end is" << ptr->data;
-//             free(ptr);
-//         }
-//     }
-// }
+void del_end()
+{
+    struct node *ptr,*temp;
+    if(start==NULL)
+    {
+        cout << "List is empty";
+    }
+    else
+    {
+        if(start->next==NULL)
+        {
+            ptr=start;
+            start = NULL;
+            cout << "element deleted at end" << ptr ->data;
+            free(ptr);
+        }
+        else
+        {   ptr=start;
+            while(ptr->next != NULL)
+            {
+                temp=ptr;
+                ptr = ptr -> next;
+            }
+            temp->prev = NULL;
+            temp->next =NULL;
+            cout << "element deleted at the end is" << ptr->data;
+            free(ptr);
+        }
+    }
+}
 
 // void del_after()
 // {
@@ -245,9 +246,9 @@ int main()
         case 4:
             del_beg();
             break;
-        // case 5:
-        //     del_end();
-        //     break;
+        case 5:
+            del_end();
+            break;
         // case 6:
         //     del_after();
         //     break;
