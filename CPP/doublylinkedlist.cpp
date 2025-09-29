@@ -192,18 +192,18 @@ void del_after()
     free(ptr);
 }
 
-// void count_nodes()
-// {
-//     struct node *ptr;
-//     int count = 0;
-//     ptr = start;
-//     while (ptr != NULL)
-//     {
-//         count++;
-//         ptr = ptr->next;
-//     }
-//     cout << "Number of nodes in the list: " << count << "\n";
-// }
+void count_nodes()
+{
+    struct node *ptr;
+    int count = 0;
+    ptr = start;
+    while (ptr != NULL)
+    {
+        count++;
+        ptr = ptr->next;
+    }
+    cout << "Number of nodes in the list: " << count << "\n";
+}
 
 
 void display()
@@ -253,9 +253,9 @@ int main()
         case 6:
             del_after();
             break;
-        // case 7:
-        //     count_nodes();
-        //     break;
+        case 7:
+            count_nodes();
+            break;
         case 8:
             display();
             break;
