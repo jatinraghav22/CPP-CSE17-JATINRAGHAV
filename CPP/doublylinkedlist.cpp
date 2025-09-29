@@ -105,7 +105,7 @@ void insert_after()
         ptr->next = temp->next;
         temp->next = ptr;
         ptr->prev = temp;                                  // When the list contains some elements
-        cout << "Element inserted after location " << loc << "\n";
+        cout << "Element inserted after location :" << loc << "\n";
     }
 }
 
@@ -153,7 +153,7 @@ void del_end()
             }
             temp->prev = NULL;
             temp->next =NULL;
-            cout << "element deleted at the end is" << ptr->data;
+            cout << "element deleted at the end is  :" << ptr->data;
             free(ptr);
         }
     }
@@ -188,7 +188,7 @@ void del_after()
     }
     temp->next = ptr->next;
     ptr->next->prev = temp;                                 
-    cout << "Element deleted after location " << loc << " is " << ptr->data << "\n";
+    cout << "Element deleted after location " << loc << " is :" << ptr->data << "\n";
     free(ptr);
 }
 
@@ -231,7 +231,7 @@ int main()
     start = NULL;
     while (1)
     {
-        cout << "---------WELCOME TO LINKED LISTS---------\n\n1. Insert at beginning.\n\n2. INSERT AT END.\n\n3. Insert at desired position.\n\n4. Deletion at Begining.\n\n5. Deletion at end\n\n6. Deletion at desired position.\n\n7. COUNT NO. OF NODES.\n\n8. Display the linked list.\n\n9. Exit\n\nEnter your choice:\n";
+        cout << "\n\n---------WELCOME TO LINKED LISTS---------\n\n1. Insert at beginning.\n\n2. INSERT AT END.\n\n3. Insert at desired position.\n\n4. Deletion at Begining.\n\n5. Deletion at end\n\n6. Deletion at desired position.\n\n7. COUNT NO. OF NODES.\n\n8. Display the linked list.\n\n9. Exit\n\nEnter your choice:\n";
         cin >> choice;
         switch (choice)
         {
