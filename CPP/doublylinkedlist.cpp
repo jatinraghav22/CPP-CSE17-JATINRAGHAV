@@ -77,36 +77,37 @@ void insert_end()
         
 }
 
-// void insert_after()
-// {
-//     struct node *ptr, *temp;
-//     int item, loc, i;
-//     cout << "Enter the location after which you want to insert an element: ";
-//     cin >> loc;
-//     cout << "Enter the element to be inserted: ";
-//     cin >> item;
-//     ptr = create_node(item);
-//     if (ptr == NULL)
-//     {
-//         cout << "Memory Alloation failed";
-//     }
-//     else
-//     {
-//         temp = start;
-//         for (i = 0; i < loc; i++)
-//         {
-//             temp = temp->next;
-//             if (temp == NULL)
-//             {
-//                 cout << "There are less than " << loc << " elements";
-//                 return;
-//             }
-//         }
-//         ptr->next = temp->next;                                  // When the list contains some elements
-//         temp->next = ptr;
-//         cout << "Element inserted after location " << loc << "\n";
-//     }
-// }
+void insert_after()
+{
+    struct node *ptr, *temp;
+    int item, loc, i;
+    cout << "Enter the location after which you want to insert an element: ";
+    cin >> loc;
+    cout << "Enter the element to be inserted: ";
+    cin >> item;
+    ptr = create_node(item);
+    if (ptr == NULL)
+    {
+        cout << "Memory Alloation failed";
+    }
+    else
+    {
+        temp = start;
+        for (i = 0; i < loc; i++)
+        {
+            temp = temp->next;
+            if (temp == NULL)
+            {
+                cout << "There are less than " << loc << " elements";
+                return;
+            }
+        }
+        ptr->next = temp->next;
+        temp->next = ptr;
+        ptr->prev = temp;                                  // When the list contains some elements
+        cout << "Element inserted after location " << loc << "\n";
+    }
+}
 
 // void del_beg()
 // {
@@ -237,9 +238,9 @@ int main()
         case 2:
             insert_end();
             break;
-        // case 3:
-        //     insert_after();
-        //     break;
+        case 3:
+            insert_after();
+            break;
         // case 4:
         //     del_beg();
         //     break;
