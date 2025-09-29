@@ -109,23 +109,24 @@ void insert_after()
     }
 }
 
-// void del_beg()
-// {
-//     struct node *ptr;
-//     if (start == NULL)
-//     {
-//         cout << "List is empty";
-//         return;
-//     }
-//     else
-//     {
-//         ptr = start;
-//         start = start->next;
-//         cout << "Element deleted at the beginning\n" << ptr ->data;
-//         free(ptr);
-//     }
+void del_beg()
+{
+    struct node *ptr;
+    if (start == NULL)
+    {
+        cout << "List is empty";
+        return;
+    }
+    else
+    {
+        ptr = start;
+        start = start->next;
+        start->prev = NULL;
+        cout << "Element deleted at the beginning\n" << ptr ->data;
+        free(ptr);
+    }
 
-// }
+}
 
 // void del_end()
 // {
@@ -241,9 +242,9 @@ int main()
         case 3:
             insert_after();
             break;
-        // case 4:
-        //     del_beg();
-        //     break;
+        case 4:
+            del_beg();
+            break;
         // case 5:
         //     del_end();
         //     break;
