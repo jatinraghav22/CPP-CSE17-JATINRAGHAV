@@ -51,30 +51,31 @@ void insert_beg()
     }
 }
 
-// void insert_end()
-// {
-//     struct node *ptr, *temp;
-//     int item;
-//     cout << "Enter the element to be inserted at the end: ";
-//     cin >> item;
-//     ptr = create_node(item);
-//     if (ptr == NULL)
-//     {
-//         cout << "Memory Alloation failed";
-//     }
-//         else
-//         {
-//             temp = start;
-//             while (temp->next != NULL)
-//             {
-//                 temp = temp->next;
-//             }
-//             temp->next = ptr;                                    // When the list contains some elements
-//             ptr->next = NULL;
-//             cout << "Element inserted at the end\n";
-//         }
+void insert_end()
+{
+    struct node *ptr, *temp;
+    int item;
+    cout << "Enter the element to be inserted at the end: ";
+    cin >> item;
+    ptr = create_node(item);
+    if (ptr == NULL)
+    {
+        cout << "Memory Alloation failed";
+    }
+        else
+        {
+            temp = start;
+            while (temp->next != NULL)
+            {
+                temp = temp->next;
+            }
+            temp->next = ptr;
+            ptr->prev = temp;                                   // When the list contains some elements
+            ptr->next = NULL;
+            cout << "Element inserted at the end\n";
+        }
         
-//     }
+}
 
 // void insert_after()
 // {
