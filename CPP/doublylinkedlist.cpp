@@ -159,37 +159,38 @@ void del_end()
     }
 }
 
-// void del_after()
-// {
-//     struct node *ptr, *temp;
-//     int loc, i;
-//     if (start == NULL)
-//     {
-//         cout << "List is empty";
-//         return;
-//     }
-//     cout << "Enter the location after which you want to delete an element: ";
-//     cin >> loc;
-//     temp = start;
-//     for (i = 1; i <= loc; i++)
-//     {
-//         temp = temp->next;
-//         if (temp == NULL)
-//         {
-//             cout << "There are less than " << loc << " elements";
-//             return;
-//         }
-//     }
-//     ptr = temp->next;
-//     if (ptr == NULL)
-//     {
-//         cout << "There is no element after location " << loc;
-//         return;
-//     }
-//     temp->next = ptr->next;                                    
-//     cout << "Element deleted after location " << loc << " is " << ptr->data << "\n";
-//     free(ptr);
-// }
+void del_after()
+{
+    struct node *ptr, *temp;
+    int loc, i;
+    if (start == NULL)
+    {
+        cout << "List is empty";
+        return;
+    }
+    cout << "Enter the location after which you want to delete an element: ";
+    cin >> loc;
+    temp = start;
+    for (i = 1; i <= loc; i++)
+    {
+        temp = temp->next;
+        if (temp == NULL)
+        {
+            cout << "There are less than " << loc << " elements";
+            return;
+        }
+    }
+    ptr = temp->next;
+    if (ptr == NULL)
+    {
+        cout << "There is no element after location " << loc;
+        return;
+    }
+    temp->next = ptr->next;
+    ptr->next->prev = temp;                                 
+    cout << "Element deleted after location " << loc << " is " << ptr->data << "\n";
+    free(ptr);
+}
 
 // void count_nodes()
 // {
@@ -249,9 +250,9 @@ int main()
         case 5:
             del_end();
             break;
-        // case 6:
-        //     del_after();
-        //     break;
+        case 6:
+            del_after();
+            break;
         // case 7:
         //     count_nodes();
         //     break;
