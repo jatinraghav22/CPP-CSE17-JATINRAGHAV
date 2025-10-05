@@ -151,7 +151,7 @@ void del_end()
                 temp=ptr;
                 ptr = ptr -> next;
             }
-            temp->prev = NULL;
+            ptr->prev = NULL;
             temp->next =NULL;
             cout << "element deleted at the end is  :" << ptr->data;
             free(ptr);
